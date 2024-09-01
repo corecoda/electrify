@@ -1,0 +1,26 @@
+spring:
+  application:
+    settings:
+      applicationsettings:
+        maximumPasswordTries: 5
+        iv: BE/s3V0HtpPsE+1x
+        key: zAL7X5AVRm8l4Ifs
+      jwtsettings:
+        secret-key: UrTS2iS14+Z10ly/kMqP5LQh261PdsFTS4H4/kZPFYPuZ0jbX9fVazDmddif173E
+        expiration: 86400000 # a day
+        refresh-token:
+          expiration: 604800000
+  datasource:
+    url: jdbc:sqlserver://oladayo-ale\\sqlexpress;databaseName=ikollect;encrypt=true;trustServerCertificate=true;portNumber=1433;integratedSecurity=true;
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        naming:
+          physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        format_sql: true
+      database-platform: org.hibernate.dialect.SQLServerDialect
+    database: sql_server
